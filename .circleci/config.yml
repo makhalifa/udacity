@@ -13,8 +13,7 @@ jobs:
     steps:
       - node/install
       - checkout
-      # install dependencies in both apps
-      # install yarn
+      - aws-cli/setup
       - run:
           name: Install Yarn
           command: |
@@ -36,6 +35,6 @@ jobs:
           command: |
             npm run backend:build
       - run:
-          name: Front-End Deploy
+          name: Deploy App
           command: |
             npm run frontend:deploy
