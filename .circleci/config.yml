@@ -14,6 +14,11 @@ jobs:
       - node/install
       - checkout
       # install dependencies in both apps
+      # install yarn
+      - run:
+          name: Install Yarn
+          command: |
+            npm install --global yarn
       - run:
           name: Front-End Dependencies
           command: |
